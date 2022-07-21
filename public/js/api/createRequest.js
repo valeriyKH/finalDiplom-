@@ -2,8 +2,7 @@
  * Основная функция для совершения запросов
  * на сервер.
  * */
-const createRequest = (options = {}) => {
-    
+const createRequest = (options = {}) => { 
     const xhr = new XMLHttpRequest;
      let url = options.url;
      let date;
@@ -31,10 +30,8 @@ const createRequest = (options = {}) => {
          xhr.send(date);
      }
      catch (e) {
-         // перехват сетевой ошибки
          callback(e);
      }  
-
      xhr.addEventListener('load', () => {
          if (xhr.status === 200) {
              options.callback(null, xhr.response);

@@ -14,7 +14,6 @@ class TransactionsPage {
     if (!element) {
       throw new Error('Данный элемент не найден!');
     };
-
     this.element = element;
     this.registerEvents();
   }
@@ -37,7 +36,6 @@ class TransactionsPage {
      removeBtn.addEventListener('click', () => {
        this.removeAccount();
      });
-
      this.element.addEventListener('click', e => {
        const transactionBtn = e.target.closest('.transaction__remove')
        if (!transactionBtn) return;
@@ -107,7 +105,6 @@ class TransactionsPage {
           this.currentAccName = response.data.name;
         };
       }); 
-
       Transaction.list(options, (err, response) => {
         if (response && response.success) {
           this.renderTransactions(response.data);
@@ -186,14 +183,11 @@ class TransactionsPage {
    * */
   renderTransactions(data){
     let html = '';
-
      for (const item of data) {
        html += this.getTransactionHTML(item);
      }
-
      const content = this.element.querySelector('.content');
      content.textContent = '';
-
      content.insertAdjacentHTML('beforeend', html);
   }
 }

@@ -15,7 +15,6 @@ class Modal {
     if (!element) {
       throw new Error('Данный элемент не найден!');
     };
-
     this.element = element;
     this.registerEvents();
   }

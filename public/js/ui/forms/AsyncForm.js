@@ -16,7 +16,6 @@ class AsyncForm {
     if (!element) {
       throw new Error('Данный элемент не найден!Элемент не существует');
     };
-
     this.element = element;
     this.registerEvents();
   }

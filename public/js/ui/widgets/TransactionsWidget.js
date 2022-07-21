@@ -15,7 +15,6 @@ class TransactionsWidget {
     if (!element) {
       throw new Error('Данный элемент не найден!');
     };
-
     this.element = element;
     this.registerEvents();
   }
@@ -31,7 +30,6 @@ class TransactionsWidget {
          e.preventDefault();
          App.getModal('newIncome').open();
        });
-
        const btnExpense = this.element.querySelector('.create-expense-button');
        btnExpense.addEventListener('click', (e) => {
          e.preventDefault();

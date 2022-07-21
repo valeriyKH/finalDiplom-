@@ -11,14 +11,12 @@ class App {
   static init() {
     this.element = document.querySelector(".app");
     this.content = document.querySelector(".content-wrapper");
-
     this.initPages();
     this.initForms();
     this.initModals();
     this.initWidgets();
 
     Sidebar.init();
-
     this.initUser();
   }
 
@@ -155,7 +153,6 @@ class App {
     }
     this.element.classList.add(`app_${state}`);
     this.state = state;
-
     if (state === "user-logged") {
       this.update();
     }
